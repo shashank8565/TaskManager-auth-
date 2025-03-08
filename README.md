@@ -1,4 +1,4 @@
-# Task Management API
+# Task Management API with session authentication 
 
 A simple **Task Management API** built using **Node.js**, **Express.js**, and **MongoDB**. It allows users to **sign up, log in, add, update, and delete tasks** while maintaining authentication via sessions.
 
