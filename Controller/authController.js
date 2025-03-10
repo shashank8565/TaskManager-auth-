@@ -19,5 +19,13 @@ exports.login = async (req, res) => {
     return res.status(401).json({ message: "Invalid credentials" });
   }
   req.session.username = user.username;
-  res.json({ message: "Logged in successfully" });
+  req.session.save((err) => {
+    // ✅ Save session explicitly
+    if (err) {
+      console.log("❌ Error saving session:", err);
+      return res.status(500).json({ message: "Session save error" });
+    }
+    console.log("✅ Session saved:", req.session);
+    res.json({ message: "Logged in successfully" });
+  });
 };
