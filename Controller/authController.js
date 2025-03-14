@@ -29,3 +29,13 @@ exports.login = async (req, res) => {
     res.json({ message: "Logged in successfully" });
   });
 };
+
+exports.Logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send({ message: "Logout failed" });
+    }
+    res.clearCookie("connect.sid"); // Clear session cookie
+    res.send({ message: "Logged out successfully" });
+  });
+};
