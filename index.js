@@ -10,7 +10,7 @@ require("dotenv").config();
 const session = require("express-session");
 app.use(
   cors({
-    origin: "http://localhost:5173", // Change to your frontend's URL
+    origin: "task-manager-frontend-rcbn.vercel.app", // Change to your frontend's URL
     credentials: true,
   })
 );
