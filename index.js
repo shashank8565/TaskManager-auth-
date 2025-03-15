@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: "https://task-manager-frontend-rcbn.vercel.app", // Change to your frontend's URL
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   })
 );
 app.use(express.urlencoded({ extended: true }));
