@@ -22,7 +22,12 @@ app.use(
     secret: "90909090909090909090909090909090909090909099999999999999999999",
     resave: false,
     saveUninitialized: false,
-    cookie: { httpOnly: true, secure: false, maxAge: 1000 * 60 * 60 * 24 },
+    cookie: {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      maxAge: 1000 * 60 * 60 * 24,
+    },
   })
 );
 
