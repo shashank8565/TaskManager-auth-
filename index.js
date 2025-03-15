@@ -16,12 +16,12 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.set("trust proxy", 1);
 app.use(
   session({
     secret: "90909090909090909090909090909090909090909099999999999999999999",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
       httpOnly: true,
       secure: true,
